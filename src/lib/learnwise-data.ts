@@ -227,3 +227,8 @@ export function scoreQuiz(answers: (number | null)[]): QuizResult {
 export function prioritizedTopics() {
   return [...topics].sort((first, second) => first.score - second.score);
 }
+
+export function prioritizedStudyTasks() {
+  const order = prioritizedTopics().map((topic) => topic.id);
+  return [...studyTasks].sort((first, second) => order.indexOf(first.topicId) - order.indexOf(second.topicId));
+}
