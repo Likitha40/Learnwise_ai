@@ -21,7 +21,7 @@ export function PageHeading({
     <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
       <div className="max-w-2xl">
         {eyebrow && <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">{eyebrow}</p>}
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h1>
+        <h1 className="font-display text-3xl font-bold text-foreground sm:text-4xl">{title}</h1>
         <p className="mt-2 text-sm leading-6 text-muted-foreground sm:text-base">{description}</p>
       </div>
       {action}
@@ -105,7 +105,7 @@ export function RecommendationCard({ title, text, link }: { title: string; text:
         <p className="mt-1 text-sm leading-5 text-muted-foreground">{text}</p>
       </div>
       <Button asChild variant="ghost" size="icon" aria-label={`Open ${title}`}>
-        <Link to={link as "/study-plan" | "/learning/$topicId"}><ArrowRight className="size-4" /></Link>
+        <Link to="/study-plan"><ArrowRight className="size-4" /></Link>
       </Button>
     </div>
   );
